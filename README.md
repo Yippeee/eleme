@@ -1,4 +1,4 @@
-# sell
+# 一个模仿饿了么的项目
 
 > A Vue.js project
 
