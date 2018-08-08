@@ -19,7 +19,11 @@
             </div>
             <div class="support-count" v-if="seller.supports" @click="showDetail">
               <span class="count">{{seller.supports.length}}个</span>
-              <i class="icon-keyboard_arrow_right"></i>
+              <svg t="1533711315590" class="description_arrow" style="" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="1150"
+                xmlns:xlink="http://www.w3.org/1999/xlink" width="13" height="13">
+                <path d="M312.888889 995.555556c-17.066667 0-28.444444-5.688889-39.822222-17.066667-22.755556-22.755556-17.066667-56.888889 5.688889-79.644445l364.088888-329.955555c11.377778-11.377778 17.066667-22.755556 17.066667-34.133333 0-11.377778-5.688889-22.755556-17.066667-34.133334L273.066667 187.733333c-22.755556-22.755556-28.444444-56.888889-5.688889-79.644444 22.755556-22.755556 56.888889-28.444444 79.644444-5.688889l364.088889 312.888889c34.133333 28.444444 56.888889 73.955556 56.888889 119.466667s-17.066667 85.333333-51.2 119.466666l-364.088889 329.955556c-11.377778 5.688889-28.444444 11.377778-39.822222 11.377778z" p-id="1151" fill="#ffffff"></path>
+            </svg>
             </div>
         </div>
         <div class="bulletin-wrapper" @click="showDetail">
@@ -153,12 +157,16 @@ export default {
         background-color rgba(0,0,0,0.2)
         border-radius 14px
         height 24px
-        line-height 24px
+        line-height 28px
         text-align center
         color rgb(255,255,255)
         .count
           font-size 10px
           line-height 12px
+        .description_arrow
+          position relative  
+          top 3px
+          left 5px
         .icon-keyboard_arrow_right
           margin-left: 2px
           line-height: 24px

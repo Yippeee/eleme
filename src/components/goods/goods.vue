@@ -30,6 +30,7 @@
                                     <span class="old" v-show="good.oldPrice">￥{{good.oldPrice}}</span>
                                 </div>
                             </div>
+                            <cartcontroler></cartcontroler>
                         </li>
                     </ul>
                 </li>
@@ -43,9 +44,11 @@
 /* eslint-disable */
 import BScroll from "better-scroll";
 import shopcart from "../shopcart/shopcart";
+import cartcontroler from "../cartcontroler/cartcontroler"
 export default {
   components:{
-      shopcart
+      shopcart,
+      cartcontroler
   },
   data() {
     return {
@@ -163,6 +166,7 @@ export default {
         .good-items {
             padding: 18px;
             display: flex;
+            position relative
             border-1px(rgba(1, 17, 27, 0.1));
 
             .icon {
