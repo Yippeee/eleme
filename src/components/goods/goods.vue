@@ -35,13 +35,18 @@
                 </li>
             </ul>
         </div>
+        <shopcart></shopcart>
     </div>
 </template>
 
 <script>
 /* eslint-disable */
 import BScroll from "better-scroll";
+import shopcart from "../shopcart/shopcart";
 export default {
+  components:{
+      shopcart
+  },
   data() {
     return {
       goods: {},
