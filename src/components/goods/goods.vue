@@ -14,7 +14,7 @@
                 <li v-for="item in goods" class="good-item-hook"> 
                     <h1 class="title">{{item.name}}</h1>
                     <ul>
-                        <li class="good-items border-1px " v-for="good in item.foods">
+                        <li class="good-items border-1px " v-for="good in item.foods" @click="showfood(food)">
                             <div class="icon">
                                 <img :src="good.icon">
                             </div>
@@ -30,26 +30,27 @@
                                     <span class="old" v-show="good.oldPrice">￥{{good.oldPrice}}</span>
                                 </div>
                             </div>
-                            <cartcontroler></cartcontroler>
+                            <cartcontroler :food="good"></cartcontroler>
                         </li>
                     </ul>
                 </li>
             </ul>
         </div>
-        <shopcart></shopcart>
+        <shopcart :selectfoods="selectfoods" :deliver="seller.deliveryPrice" :minPrice="seller.minPrice"></shopcart>
     </div>
 </template>
 
 <script>
 /* eslint-disable */
-import BScroll from "better-scroll";
-import shopcart from "../shopcart/shopcart";
+import BScroll from "better-scroll"
+import shopcart from "../shopcart/shopcart"
 import cartcontroler from "../cartcontroler/cartcontroler"
 export default {
   components:{
       shopcart,
       cartcontroler
   },
+  props:['seller'],
   data() {
     return {
       goods: {},
@@ -68,6 +69,19 @@ export default {
         }
       }
       return 0;
+    },
+    selectfoods() {
+        let res = []
+        if(this.goods.length > 0){
+            this.goods.forEach(item => {
+                item.foods.forEach(food => {
+                    if(food.num){   
+                        res.push(food)
+                    }
+                } )
+            });
+        }
+        return res
     }
   },
   created() {
@@ -104,6 +118,9 @@ export default {
       }
       let el = document.getElementsByClassName('good-item-hook')[index]
       this.foodScroll.scrollToElement(el, 300);
+    },
+    showfood(foods) {
+    
     }
   }
 };

@@ -11,9 +11,10 @@
       <div class="havItem">
         <router-link to="/seller">{{havArr[2]}}</router-link>
       </div>
-
     </div>
-    <router-view/>
+    <keep-alive>
+      <router-view :seller="seller"></router-view>
+    </keep-alive>
   </div>
 </template>
 
