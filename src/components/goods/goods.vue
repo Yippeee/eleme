@@ -63,7 +63,7 @@ export default {
         let height1 = this.heightArray[i];
         let height2 = this.heightArray[i + 1];
         let y = this.scrollY;
-        if (y >= height1 && y < height2) {
+        if (y >= height1-5 && y < height2-5) {
           return i;
         }
       }
@@ -73,7 +73,6 @@ export default {
   created() {
     this.$http.get("/api/goods").then(res => {
       this.goods = res.body.data;
-      console.log(this.goods);
       this.$nextTick(() => {
         this._initScroll();
         this.heightArray.push(0);
@@ -83,7 +82,6 @@ export default {
           height += dom[i].clientHeight;
           this.heightArray.push(height);
         }
-        console.log(this.heightArray);
       });
     });
   },

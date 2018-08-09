@@ -47,6 +47,7 @@ export default {
   right 18px
   bottom 18px
   font-size 0
+  height 34px
   .icon-decrease
     padding  5px
     &.enter-active, &.leave-active
