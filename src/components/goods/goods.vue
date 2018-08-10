@@ -36,6 +36,7 @@
                 </li>
             </ul>
         </div>
+        <div v-show="showFood" class="food" ref="food">
             <div class="food-wrap" >
                 <div class="food-header">
                 <div class="hearder-avatar">
